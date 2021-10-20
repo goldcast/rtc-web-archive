@@ -1,15 +1,15 @@
 {
   "name": "agora-rtc-sdk",
-  "version": "3.6.5",
+  "version": "3.6.6",
   "description": "AgoraRTC SDK for web",
-  "main": "AgoraRTCSDK.min.js",
+  "main": "AgoraRTCSDK.js",
   "typings": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AgoraIO/web-archive.git"
+    "url": "git+https://github.com/goldcast/rtc-web-archive"
   },
   "keywords": [
     "Agora",
