@@ -3539,7 +3539,7 @@
                       maxFrameRate: e.attributes.maxFrameRate,
                       agoraStream: e,
                       clientId: L.clientId,
-                      isCloudProxy3: 3 === L.joinInfo.proxyServerType,
+                      isCloudProxy3or4: [3, 4].includes(L.joinInfo.proxyServerType),
                       onNoIceCandidate: function () {
                         L.dispatchEvent({ type: "no_ice_candidate", stream: e });
                       },
@@ -19378,7 +19378,7 @@
                   (t.prevOffer = t.peerConnection.localDescription.sdp),
                     (t.offerCandidates = t.prevOffer.match(/a=candidate.+\r\n/g) || []),
                     t.offerCandidates.length ||
-                      (e.isCloudProxy3 && e.onNoIceCandidate && e.onNoIceCandidate(),
+                      (e.isCloudProxy3or4 && e.onNoIceCandidate && e.onNoIceCandidate(),
                       u.default.warning("[".concat(t.clientId, "]No Ice Candidate generated")),
                       Object(p.getParameter)("SHIM_CANDIDATE")
                         ? (u.default.debug("Shimming fake candidate"), (t.prevOffer += "a=candidate:2243255435 1 udp 2122194687 192.168.0.1 30000 typ host generation 0 network-id 1\r\n"))
@@ -19925,7 +19925,7 @@
                     (t.offerCandidates = t.prevOffer.match(/a=candidate.+\r\n/g) || []),
                     t.offerCandidates.length ||
                       (u.default.warning("[".concat(t.clientId, "]No Ice Candidate generated")),
-                      e.isCloudProxy3 && e.onNoIceCandidate && e.onNoIceCandidate(),
+                      e.isCloudProxy3or4 && e.onNoIceCandidate && e.onNoIceCandidate(),
                       Object(p.getParameter)("SHIM_CANDIDATE")
                         ? (u.default.debug("Shimming fake candidate"), (t.prevOffer += "a=candidate:2243255435 1 udp 2122194687 192.168.0.1 30000 typ host generation 0 network-id 1\r\n"))
                         : u.default.error("[".concat(t.clientId, "]None Ice Candidate not allowed"))),
@@ -20548,7 +20548,7 @@
                   (t.prevOffer = t.peerConnection.localDescription.sdp),
                     (t.offerCandidates = t.prevOffer.match(/a=candidate.+\r\n/g) || []),
                     t.offerCandidates.length ||
-                      (e.isCloudProxy3 && e.onNoIceCandidate && e.onNoIceCandidate(),
+                      (e.isCloudProxy3or4 && e.onNoIceCandidate && e.onNoIceCandidate(),
                       u.default.warning("[".concat(t.clientId, "]No Ice Candidate generated")),
                       Object(p.getParameter)("SHIM_CANDIDATE")
                         ? (u.default.debug("Shimming fake candidate"), (t.prevOffer += "a=candidate:2243255435 1 udp 2122194687 192.168.0.1 30000 typ host generation 0 network-id 1\r\n"))
