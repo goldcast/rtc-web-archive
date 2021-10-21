@@ -3749,6 +3749,9 @@
                       uid: e.getId(),
                       agoraStream: e,
                       clientId: L.clientId,
+                      onNoIceCandidate: function () {
+                        L.dispatchEvent({ type: "no_ice_candidate", stream: e });
+                      },
                     })),
                     (e.pc.onaddstream = function (t, n) {
                       if (
