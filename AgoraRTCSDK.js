@@ -4998,7 +4998,6 @@
                       maxFrameRate: e.attributes.maxFrameRate,
                       agoraStream: e,
                       clientId: L.clientId,
-                      isCloudProxy3: 3 === L.joinInfo.proxyServerType,
                       onNoIceCandidate: function () {
                         L.dispatchEvent({
                           type: "no_ice_candidate",
@@ -16536,9 +16535,7 @@
                     (t.offerCandidates =
                       t.prevOffer.match(/a=candidate.+\r\n/g) || []),
                     t.offerCandidates.length ||
-                      (e.isCloudProxy3 &&
-                        e.onNoIceCandidate &&
-                        e.onNoIceCandidate(),
+                      (e.onNoIceCandidate && e.onNoIceCandidate(),
                       u.default.warning(
                         "[".concat(t.clientId, "]No Ice Candidate generated")
                       ),
@@ -17396,9 +17393,7 @@
                       (u.default.warning(
                         "[".concat(t.clientId, "]No Ice Candidate generated")
                       ),
-                      e.isCloudProxy3 &&
-                        e.onNoIceCandidate &&
-                        e.onNoIceCandidate(),
+                      e.onNoIceCandidate && e.onNoIceCandidate(),
                       Object(f.getParameter)("SHIM_CANDIDATE")
                         ? (u.default.debug("Shimming fake candidate"),
                           (t.prevOffer +=
@@ -18309,9 +18304,7 @@
                     (t.offerCandidates =
                       t.prevOffer.match(/a=candidate.+\r\n/g) || []),
                     t.offerCandidates.length ||
-                      (e.isCloudProxy3 &&
-                        e.onNoIceCandidate &&
-                        e.onNoIceCandidate(),
+                      (e.onNoIceCandidate && e.onNoIceCandidate(),
                       u.default.warning(
                         "[".concat(t.clientId, "]No Ice Candidate generated")
                       ),
