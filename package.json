@@ -1,8 +1,8 @@
 {
   "name": "agora-rtc-sdk",
-  "version": "3.6.9",
-  "description": "AgoraRTC SDK for web",
-  "main": "AgoraRTCSDK.min.js",
+  "version": "3.6.9patch1",
+  "description": "AgoraRTC Web SDK V3 - Goldcast Edit",
+  "main": "AgoraRTCSDK.js",
   "typings": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
